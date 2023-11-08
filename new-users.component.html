@@ -1,0 +1,18 @@
+<div class="container">
+    <h4 style="text-align: start;"><strong>New Users Registrations</strong></h4>
+
+<div class="progress-container" *ngFor="let item of data" >
+    <div class="image-container">
+        <!-- <img src="https://www.shutterstock.com/image-photo/happy-casual-businessman-looking-camera-260nw-192818009.jpg" /> -->
+     
+        <img [src]="item.picture" alt="" />
+ 
+    </div>
+      <p>{{item.name}}</p>
+    <mat-progress-bar mode="determinate" value="50" [ngStyle]="{'background-color': isActive ?'green':'red'}"></mat-progress-bar>
+    <span>{{item.progress}}%</span>
+    <button mat-raised-button color="basic" class="custom-button">More</button>
+  </div>
+</div>
+
+

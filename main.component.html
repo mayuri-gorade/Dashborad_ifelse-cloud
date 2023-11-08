@@ -1,0 +1,47 @@
+
+<div class="container">
+    <mat-grid-list cols="4" rowHeight="4:2" gutterSize="10px" style="margin: 30px;">
+        <mat-grid-tile (mouseover)="activeGrid = 1" (mouseout)="activeGrid = 0" [ngClass]="{ 'active': activeGrid === 1 }">
+            <div class="row" >
+                <div class="col-md-6"><span>{{Value}}%</span>
+                    <p>{{headerValue}}
+                        {{sub_headerValue}}
+                    </p>
+                </div>
+                <div class="col-md-6"><button mat-button><mat-icon>settings</mat-icon></button></div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile (mouseover)="activeGrid = 2" (mouseout)="activeGrid = 0" [ngClass]="{ 'active': activeGrid === 2 }">
+            <div class="row" >
+                <div class="col-md-6"><span>{{Value1}}%</span>
+                    <p>{{headerValue1}}
+                        {{sub_headerValue1}}
+                    </p>
+                </div>
+                <div class="col-md-6"><button mat-button><mat-icon>star</mat-icon></button></div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile (mouseover)="activeGrid = 3" (mouseout)="activeGrid = 0" [ngClass]="{ 'active': activeGrid === 3 }">
+            <div class="row">
+                <div class="col-md-6"><span>{{Value2}}%</span>
+                    <p>{{headerValue2}}
+                        {{sub_headerValue2}}
+                    </p>
+                </div>
+                <div class="col-md-6"><button mat-button><mat-icon>save_alt</mat-icon></button></div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile (mouseover)="activeGrid = 4" (mouseout)="activeGrid = 0" [ngClass]="{ 'active': activeGrid === 4 }">
+            <div class="row">
+                <div class="col-md-6"><span>{{Value3}}%</span>
+                    <p>{{headerValue3}}
+                        {{sub_headerValue3}}
+                    </p>
+                </div>
+                <div class="col-md-6"><button mat-button><mat-icon>favorite</mat-icon></button></div>
+            </div>
+        </mat-grid-tile>
+       
+      </mat-grid-list>
+</div>
+<app-table></app-table>

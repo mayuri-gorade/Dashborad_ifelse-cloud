@@ -1,0 +1,62 @@
+<!-- navbar -->
+
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button style="margin: 80px;"><mat-icon>search</mat-icon>Search</button>
+    <span class="example-spacer"></span>
+    <!-- <button routerLink="" mat-button>Home</button> -->
+    <button  mat-button  [matMenuTriggerFor]="eng">ENG <mat-icon>arrow_drop_down</mat-icon></button>
+
+    <mat-menu #eng="matMenu">
+        <button mat-menu-item>Hindi</button>
+        <button  mat-menu-item>Marathi</button>
+        <button  mat-menu-item>Gujrati</button>
+    </mat-menu>
+
+
+    <button mat-button><mat-icon> comment</mat-icon></button>
+    <button (click)="badgevisibility()"  mat-icon-button>
+        <mat-icon matBadgeColor="accent" matBadge="15" [matBadgeHidden]="badgevisible" matBadgeSize="small">notifications</mat-icon>
+    </button>
+    <button  mat-button><img style="height: 30px; margin-top: 15px;"  src="https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg" alt=""></button>
+   <button mat-button>Camille Stevenson <mat-icon>arrow_drop_down</mat-icon></button>
+</mat-toolbar>
+
+
+
+<!-- Sidebar -->
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+        <mat-list-item>
+            <button routerLink="card" mat-button><mat-icon>dashboard</mat-icon></button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="" mat-button><mat-icon>add_to_photos</mat-icon> </button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="slider" mat-button><mat-icon> bar_chart</mat-icon></button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="table" mat-button><mat-icon>done_outline</mat-icon></button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-button><mat-icon>settings</mat-icon> </button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-button><mat-icon>save_alt</mat-icon> </button>
+        </mat-list-item>
+        
+    </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;min-height: 600px;">
+            <router-outlet></router-outlet>
+            <app-main></app-main>
+            </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
